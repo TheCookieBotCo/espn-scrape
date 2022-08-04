@@ -3,14 +3,11 @@ const cheerio = require("cheerio");
 
 function get_match_scores() {
   axios
-    // .get("https://www.espncricinfo.com/live-cricket-score")
-    .get("https://www.espncricinfo.com/live-cricket-match-results")
+    .get("https://www.espncricinfo.com/live-cricket-score")
     .then((response) => {
       let matches = [];
       const $ = cheerio.load(response.data);
-    //   $("span:contains('Shpageeza Cricket League')")
-        // $("span:contains('Top Events')")
-        $("span:contains('India tour of West Indies')")
+        $("span:contains('Top Events')")
         .parent()
         .parent()
         .parent()
