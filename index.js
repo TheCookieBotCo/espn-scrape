@@ -86,11 +86,8 @@ function get_match_scores() {
           match_info.result = cheerio.load(match_data[1]).text();
           matches.push(match_info);
         });
-      console.log(matches);
       return matches;
     });
 }
 
-// module.exports = get_match_scores;
-
-get_match_scores();
+module.exports = get_match_scores;
